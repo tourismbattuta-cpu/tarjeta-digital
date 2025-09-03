@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarjeta Digital - HGL ENTERPRISE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000; /* Negro sólido */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      width: 350px;
+      background: #111111; /* Negro intenso */
+      border: 2px solid #d4af37; /* Dorado */
+      border-radius: 15px;
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      margin: 10px 0;
+      color: #d4af37; /* Dorado */
+    }
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #000000;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #b9972b;
+    }
+    .qr {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Logo de la empresa -->
+    <img src="LOGO DORADO FONDO BLANCO.jpg" alt="Logo HGL" class="logo">
+
+    <!-- Nombre y cargo -->
+    <h2>Hernando Hernández Chaparro</h2>
+    <p>Gerente Comercial</p>
+
+    <!-- Empresa -->
+    <p><strong>HGL ENTERPRISE</strong></p>
+
+    <!-- Datos de contacto -->
+    <p>📞 +971 507813124</p>
+    <p>✉️ sales@hglenterprise.com</p>
+
+    <!-- Botón guardar contacto -->
+    <a href="hernando.vcf" class="btn" download>Guardar Contacto</a>
+
+    <!-- QR -->
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://hernando.vcf" alt="QR Contacto">
+    </div>
+  </div>
+</body>
+</html>
+
