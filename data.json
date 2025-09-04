@@ -15,7 +15,7 @@
   },
   "sandra": {
     "nombre": "Sandra Garcia Perez",
-    "cargo": "Gerente",
+    "cargo": "Comercial",
     "telefono": "+971 505348169",
     "correo": "sales@hglenterprise.com",
     "vcf": "sandra.vcf"
@@ -28,5 +28,6 @@
     "vcf": "yazmin.vcf"
   }
 }
+
 
 
