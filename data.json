@@ -6,14 +6,14 @@
     "correo": "sales@hglenterprise.com",
     "vcf": "hernando.vcf"
   },
-  "Jeison": {
+  "jeison": {
     "nombre": "Jeison Andres Leon Garcia",
     "cargo": "Gerente",
     "telefono": "+971 564708537",
     "correo": "sales@hglenterprise.com",
     "vcf": "jeison.vcf"
   },
-  "Jeison": {
+  "sandra": {
     "nombre": "Sandra Garcia Perez",
     "cargo": "Gerente",
     "telefono": "+971 505348169",
@@ -28,3 +28,4 @@
     "vcf": "yazmin.vcf"
   }
 }
+
