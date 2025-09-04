@@ -91,9 +91,10 @@
         window.location.href = persona.vcf;
       };
 
-      // Generar QR
+      // Generar QR con URL fija de GitHub Pages
+      const urlBase = "https://tourismbattuta-cpu.github.io/tarjeta-digital/";
       new QRCode(document.getElementById("qrcode"), {
-        text: window.location.origin + window.location.pathname + "?id=" + id,
+        text: urlBase + "?id=" + id,
         width: 128,
         height: 128
       });
