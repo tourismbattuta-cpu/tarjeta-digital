@@ -3,83 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjeta Digital - Hernando Hernández</title>
+  <title>Tarjeta Digital - HGL</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #000000;
+      background: #000;
       color: #FFD700;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
     .card {
-      background: #111111;
-      border: 2px solid #FFD700;
+      background: #111;
       border-radius: 15px;
       padding: 20px;
       text-align: center;
-      width: 350px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      max-width: 350px;
+      box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.6);
     }
     .logo {
-      width: 120px;
+      max-width: 120px;
       margin-bottom: 15px;
     }
-    h2 {
-      margin: 10px 0 5px;
-      color: #FFD700;
+    .name {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 10px 0;
     }
-    p {
+    .title {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+    .contact {
       margin: 5px 0;
-      color: #ffffff;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
+    button {
       background: #FFD700;
       color: #000;
-      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
       border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
+      cursor: pointer;
+      margin-top: 15px;
     }
-    .btn:hover {
-      background: #e6c200;
-    }
-    .qr {
+    #qrcode {
       margin-top: 20px;
-    }
-    .qr img {
-      width: 150px;
-      height: 150px;
     }
   </style>
 </head>
 <body>
   <div class="card">
     <img src="LOGO DORADO FONDO BLANCO.jpg" alt="Logo HGL" class="logo">
-    <h2>Hernando Hernández Chaparro</h2>
-    <p><strong>Cargo:</strong> Gerente Comercial</p>
-    <p><strong>Teléfono:</strong> +971 507813124</p>
-    <p><strong>Correo:</strong> sales@hglenterprise.com</p>
-    <p><strong>Empresa:</strong> HGL ENTERPRISE</p>
-
-    <!-- Botón para descargar el contacto -->
-    <a href="hernando.vcf" class="btn" download="Hernando_Hernandez.vcf" type="text/vcard">
-      Guardar Contacto
-    </a>
-
-    <!-- QR que apunta directo al contacto en GitHub Pages -->
-    <div class="qr">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tourismbattuta-cpu.github.io/tarjeta-digital/hernando.vcf" alt="QR Contacto">
+    <div id="info">
+      <div class="name">Cargando...</div>
+      <div class="title"></div>
+      <div class="contact"></div>
+      <div class="contact"></div>
     </div>
+    <button id="saveBtn">Guardar Contacto</button>
+    <div id="qrcode"></div>
   </div>
+
+  <script>
+    async function cargarDatos() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id") || "hernando"; // Por defecto Hernando
+
+      const resp = await fetch("data.json");
+      const data = await resp.json();
+
+      const persona = data[id];
+      if (!persona) {
+        document.getElementById("info").innerHTML = "<p>No se encontró la tarjeta.</p>";
+        return;
+      }
+
+      document.querySelector(".name").textContent = persona.nombre;
+      document.querySelector(".title").textContent = persona.cargo;
+      document.querySelectorAll(".contact")[0].textContent = "Tel: " + persona.telefono;
+      document.querySelectorAll(".contact")[1].textContent = "Email: " + persona.correo;
+
+      // Botón para descargar vCard
+      document.getElementById("saveBtn").onclick = () => {
+        window.location.href = persona.vcf;
+      };
+
+      // Generar QR
+      new QRCode(document.getElementById("qrcode"), {
+        text: window.location.origin + window.location.pathname + "?id=" + id,
+        width: 128,
+        height: 128
+      });
+    }
+
+    cargarDatos();
+  </script>
 </body>
 </html>
-
-
-

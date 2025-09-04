@@ -1,0 +1,30 @@
+{
+  "hernando": {
+    "nombre": "Hernando Hernández Chaparro",
+    "cargo": "Gerente Comercial",
+    "telefono": "+971 507813124",
+    "correo": "sales@hglenterprise.com",
+    "vcf": "hernando.vcf"
+  },
+  "Jeison": {
+    "nombre": "Jeison Andres Leon Garcia",
+    "cargo": "Gerente",
+    "telefono": "+971 564708537",
+    "correo": "sales@hglenterprise.com",
+    "vcf": "jeison.vcf"
+  },
+  "Jeison": {
+    "nombre": "Sandra Garcia Perez",
+    "cargo": "Gerente",
+    "telefono": "+971 505348169",
+    "correo": "sales@hglenterprise.com",
+    "vcf": "jeison.vcf"
+  },
+  "yazmin": {
+    "nombre": "Yazmin Garcia Perez",
+    "cargo": "Jefe Comercial",
+    "telefono": "+971 523583461",
+    "correo": "sales@hglenterprise.com",
+    "vcf": "yazmin.vcf"
+  }
+}
